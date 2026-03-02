@@ -4,14 +4,20 @@ test("Counter test", async ({ page }) => {
 	await page.goto("/");
 	await expect(page).toHaveTitle("Counter");
 	await expect(page.locator("h1")).toHaveText("Counter");
-	await expect(page.locator("#count")).toHaveText("0");
 
-	await page.getByRole("button", { name: "Increment" }).click();
-	await expect(page.locator("#count")).toHaveText("1");
+	// Playwrightのロケーターは遅延評価されるため、変数に入れておいても動作する
+	const count = page.locator("#count");
+	const incrementButton = page.getByRole("button", { name: "Increment" });
+	const resetButton = page.getByRole("button", { name: "Reset" });
 
-	await page.getByRole("button", { name: "Increment" }).click();
-	await expect(page.locator("#count")).toHaveText("2");
+	await expect(count).toHaveText("0");
 
-	await page.getByRole("button", { name: "Reset" }).click();
-	await expect(page.locator("#count")).toHaveText("0");
+	await incrementButton.click();
+	await expect(count).toHaveText("1");
+
+	await incrementButton.click();
+	await expect(count).toHaveText("2");
+
+	await resetButton.click();
+	await expect(count).toHaveText("0");
 });
