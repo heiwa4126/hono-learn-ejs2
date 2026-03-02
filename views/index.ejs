@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello <%= title %></title>
+    <title>Counter</title>
   </head>
   <body>
-    <h1>Hello</h1>
-		<p><%= title %></p>
+    <h1>Counter</h1>
+		<form method="post" action=".">
+		<%= count %>
+		<button type="submit" name="action" value="increment">Increment</button>
+		<button type="submit" name="action" value="reset">Reset</button>
+		<input type="hidden" name="count" value="<%= count %>">
+		</form>
 		<hr>
 		<p>Last updated: <%= new Date().toLocaleString() %></p>
   </body>
