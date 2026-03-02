@@ -1,5 +1,5 @@
 {
-	"name": "hono-learn-ejs1",
+	"name": "hono-learn-ejs2",
 	"type": "module",
 	"scripts": {
 		"preinstall": "pnpm audit",
