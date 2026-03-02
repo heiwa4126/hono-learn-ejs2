@@ -1,0 +1,21 @@
+{
+	"name": "hono-learn-ejs1",
+	"type": "module",
+	"scripts": {
+		"dev": "tsx watch src/index.ts",
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"format": "biome format --write .",
+		"format:all": "biome format --write . && dprint fmt"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.19.9",
+		"ejs": "^4.0.1",
+		"hono": "^4.12.3"
+	},
+	"devDependencies": {
+		"@types/node": "^20.19.35",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3"
+	}
+}
