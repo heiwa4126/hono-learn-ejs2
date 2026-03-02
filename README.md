@@ -1,8 +1,21 @@
-```
-npm install
-npm run dev
+# hono-learn-ejs1
+
+Hono で [EJS](https://www.npmjs.com/package/ejs) を使う例
+
+## 実行
+
+```sh
+pnpm install
+
+pnpm run dev
+# または
+pnpm run build & pnpm start
 ```
 
-```
-open http://localhost:3000
-```
+ブラウザで
+<http://localhost:3000>
+を開く。
+
+## メモ
+
+いまのところバンドルはしてない。
