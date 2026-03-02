@@ -1,6 +1,8 @@
-# hono-learn-ejs1
+# hono-learn-ejs2
 
-Hono で [EJS](https://www.npmjs.com/package/ejs) を使う例
+Hono で [EJS](https://www.npmjs.com/package/ejs) を使う例 #2
+
+ボタンを押すと1増えるカウンターを、サーバサイドで実装してみた。
 
 ## 実行
 
@@ -15,7 +17,3 @@ pnpm run build & pnpm start
 ブラウザで
 <http://localhost:3000>
 を開く。
-
-## メモ
-
-いまのところバンドルはしてない。
