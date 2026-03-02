@@ -8,7 +8,7 @@
   <body>
     <h1>Counter</h1>
 		<form method="post" action=".">
-		<%= count %>
+		<span id="count"><%= count %></span>
 		<button type="submit" name="action" value="increment">Increment</button>
 		<button type="submit" name="action" value="reset">Reset</button>
 		<input type="hidden" name="count" value="<%= count %>">
