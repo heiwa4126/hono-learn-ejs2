@@ -8,7 +8,9 @@
 		"start": "node dist/index.js",
 		"format": "biome format --write .",
 		"format:all": "biome format --write . && dprint fmt",
-		"playwright:install": "playwright install chromium",
+		"playwright:install:browser:original": "playwright install chromium",
+		"playwright:install:browser": "node scripts/download_chromes.mjs",
+		"playwright:list:browser": "playwright install --list",
 		"playwright:install:test": "playwright cr 127.0.0.1:3000",
 		"codegen": "playwright codegen",
 		"test:e2e": "playwright test"
@@ -19,6 +21,8 @@
 		"hono": "^4.12.3"
 	},
 	"devDependencies": {
+		"@playwright/cli": "^0.1.1",
+		"@playwright/mcp": "^0.0.68",
 		"@playwright/test": "^1.58.2",
 		"@types/ejs": "^3.1.5",
 		"@types/node": "^20.19.35",
