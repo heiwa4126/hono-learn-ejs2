@@ -1,3 +1,4 @@
+import { serveStatic } from "@hono/node-server/serve-static";
 import ejs from "ejs";
 import { Hono } from "hono";
 
@@ -5,6 +6,7 @@ export const app = new Hono();
 
 const template1 = "views/index.ejs";
 app
+	.use("/favicon.ico", serveStatic({ path: "public/favicon.ico" }))
 	.get("/", async (c) => {
 		const html = await ejs.renderFile(template1, { count: 0 });
 		return c.html(html);
