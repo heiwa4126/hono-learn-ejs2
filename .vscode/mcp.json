@@ -6,8 +6,7 @@
         "exec",
         "playwright-mcp",
 				"--browser=chromium",
-				"--image-responses", "omit",
-				"--output-dir", "./screenshots"
+				"--image-responses", "omit"
       ]
     }
   },
