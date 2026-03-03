@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "playwright": {
+      "command": "pnpm",
+      "args": [
+        "exec",
+        "playwright-mcp",
+				"--browser=chromium",
+				"--image-responses", "omit",
+				"--output-dir", "./screenshots"
+      ]
+    }
+  },
+  "inputs": []
+}
