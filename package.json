@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@hono/node-server": "^1.19.9",
 		"ejs": "^4.0.1",
-		"hono": "^4.12.3"
+		"hono": "^4.12.4"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.58.2",
