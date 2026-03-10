@@ -105,6 +105,14 @@ MCPのオプションでなんとか回避できた。[.vscode/mcp.json](.vscode
 [Configuration - microsoft/playwright-mcp: Playwright MCP server](https://github.com/microsoft/playwright-mcp?tab=readme-ov-file#configuration)
 参照
 
+カスタムプロンプト作った。
+
+```text
+/screenshot-with-playwright-mcp "Increment" ボタンを2回押してスクリーンショットをとって
+```
+
+で運が良ければ動く。
+
 ## Playwright CLI
 
 (いったん Playwright MCP を 「ツールの構成」から停止して実行しました。あまり意味はないかも)
