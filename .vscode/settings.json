@@ -1,5 +1,8 @@
 {
 	"cSpell.words": [
 		"codegen"
-	]
+	],
+	"chat.tools.terminal.autoApprove": {
+		"pnpm": true
+	}
 }

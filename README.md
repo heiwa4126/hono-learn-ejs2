@@ -108,10 +108,10 @@ MCPのオプションでなんとか回避できた。[.vscode/mcp.json](.vscode
 カスタムプロンプト作った。
 
 ```text
-/screenshot-with-playwright-mcp "Increment" ボタンを2回押してスクリーンショットをとって
+/screenshot-mcp "Increment" ボタンを2回押してスクリーンショットをとって
 ```
 
-で運が良ければ動く。
+で運が良ければ tmp/ 以下にスクリーンショットが生成される。
 
 ## Playwright CLI
 
@@ -143,5 +143,25 @@ MCP版よりよっぽど使いやすいし、ちゃんと動く
 
 ### SKILL.md
 
-(working...)
-「毎回指示しているもの」をSKILLにする。
+「毎回指示しているもの」をSKILLにした。意外と面倒
+
+とりあえず
+
+```text
+/screenshot-cli  "Increment" ボタンを2回押して
+```
+
+で tmp/ 以下にスクリーンショットが生成される。
+さらに
+
+```text
+いまの手順をscripts/increment2-and-screenshot.ts として保存して
+```
+
+と指示すればコードを生成してくれる
+
+**メモ**
+
+- サーバの起動チェックに curl や node xxx を使うと途中で停止してめんどう。run-scripts にすると止まらない
+- `pnpm dev` も止まる。 `pnpm run dev` なら動く。
+- [settings.json](.vscode/settings.json)参照

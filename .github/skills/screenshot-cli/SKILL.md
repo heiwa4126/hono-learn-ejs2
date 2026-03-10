@@ -1,5 +1,5 @@
 ---
-name: screenshot-with-playwright-cli
+name: screenshot-cli
 description: 'Take a screenshot of localhost:3000 using playwright-cli (local node_modules terminal commands). Use when: capturing screenshots with Playwright CLI, clicking buttons before screenshot, browser automation without MCP. Starts pnpm dev if server is not running.'
 argument-hint: 'Actions to perform before screenshot, e.g. "Increment" ボタンを3回押して'
 ---
@@ -15,38 +15,22 @@ argument-hint: 'Actions to perform before screenshot, e.g. "Increment" ボタン
 ### 1. Check Server
 
 ```bash
-curl -s http://localhost:3000 > /dev/null && echo "Server is running" || echo "Server is not running"
+pnpm run check:server
 ```
 
 If not running, start it:
 
 ```bash
-pnpm dev
+pnpm run dev
 ```
 
-### 2. Generate Timestamp Filename
-
-Generate the current timestamp in `YYYYMMdd_HHmmss` format.
-
-Example: `20260310_170230.png` (March 10, 2026 at 17:02:30)
-
-Where:
-- YYYY = Year (4 digits)
-- MM = Month (2 digits, 01-12)
-- dd = Day (2 digits, 01-31)
-- HH = Hour (2 digits, 00-23)
-- mm = Minutes (2 digits, 00-59)
-- ss = Seconds (2 digits, 00-59)
-
-Save as `tmp/<timestamp>.png`.
-
-### 3. Open Browser
+### 2. Open Browser
 
 ```bash
 pnpm exec playwright-cli -s=main open --browser=chromium http://localhost:3000
 ```
 
-### 4. Get Snapshot & Find Button Ref
+### 3. Get Snapshot & Find Button Ref
 
 ```bash
 pnpm exec playwright-cli -s=main snapshot
@@ -64,7 +48,7 @@ Example snapshot output:
     - button "Reset" [ref=e5]
 ```
 
-### 5. Perform Button Actions
+### 4. Perform Button Actions
 
 Repeat the following for each click action specified in the argument (default: click `"Increment"` once).
 
@@ -84,7 +68,7 @@ pnpm exec playwright-cli -s=main click e4
 pnpm exec playwright-cli -s=main click e4
 ```
 
-### 6. Get Updated Snapshot & Find Body Ref
+### 5. Get Updated Snapshot & Find Body Ref
 
 ```bash
 pnpm exec playwright-cli -s=main snapshot
@@ -92,13 +76,15 @@ pnpm exec playwright-cli -s=main snapshot
 
 Find the root `generic [active]` element ref — this corresponds to `<body>` (e.g. `e1`).
 
-### 7. Take Screenshot
+### 6. Take Screenshot
 
 ```bash
 pnpm exec playwright-cli -s=main screenshot <body-ref> --filename=tmp/<timestamp>.png
 ```
 
 Replace `<body-ref>` with the root `[active]` element ref (e.g. `e1`) and `<timestamp>` with the generated timestamp.
+
+The timestamp should be in the format `tmp/YYYYMMdd_HHmmss.png` (e.g., `tmp/20260310_170230.png` for March 10, 2026 at 17:02:30).
 
 ## Reference
 

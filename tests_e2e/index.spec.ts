@@ -5,7 +5,7 @@ test("Counter test", async ({ page }) => {
 	await expect(page).toHaveTitle("Counter");
 	await expect(page.locator("h1")).toHaveText("Counter");
 
-	// Playwrightのロケーターは遅延評価されるため、変数に入れておいても動作する
+	// Playwrightのロケーターは遅延評価される。変数に入れても動作する
 	const count = page.locator("#count");
 	const incrementButton = page.getByRole("button", { name: "Increment" });
 	const resetButton = page.getByRole("button", { name: "Reset" });

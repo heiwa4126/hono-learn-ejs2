@@ -4,6 +4,8 @@
 	"scripts": {
 		"preinstall": "pnpm audit",
 		"dev": "tsx watch src/index.ts",
+		"stop": "pkill -f watch src/index.ts",
+		"check:server": "node scripts/check-server.mjs",
 		"build": "tsc",
 		"start": "node dist/index.js",
 		"format": "biome format --write .",
@@ -13,11 +15,13 @@
 		"playwright:list:browser": "playwright install --list",
 		"playwright:install:test": "playwright cr 127.0.0.1:3000",
 		"codegen": "playwright codegen",
-		"test:e2e": "playwright test"
+		"test:e2e": "playwright test",
+		"inc1": "tsx scripts/increment-and-screenshot.ts",
+		"inc2": "tsx scripts/increment2-and-screenshot.ts"
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.19.11",
-		"ejs": "^4.0.1",
+		"ejs": "^5.0.1",
 		"hono": "^4.12.5"
 	},
 	"devDependencies": {
