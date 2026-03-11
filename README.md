@@ -80,6 +80,7 @@ pnpm add -D @playwright/mcp@latest
         "exec",
         "playwright-mcp",
 				"--browser=chromium"  # これ書かないとchromeを使おうとする
+				# あとで "--image-responses", "omit" を追加
       ]
     }
   },
