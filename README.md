@@ -24,7 +24,12 @@ pnpm run build & pnpm start
 ```sh
 # 準備
 pnpm i
+
+# サーバ起動
+pnpm run dev
 ```
+
+で <http://localhost:3000> をブラウザで開く
 
 ## Playwright によるE2Eテスト
 
@@ -105,7 +110,7 @@ MCP のオプションでなんとか回避できた。[.vscode/mcp.json](.vscod
 [Configuration - microsoft/playwright-mcp: Playwright MCP server](https://github.com/microsoft/playwright-mcp?tab=readme-ov-file#configuration)
 参照
 
-カスタムプロンプト作った。
+カスタムプロンプト作った。なんでプロンプトか、というと CLI 版側で SKILL の自動発火したかったから
 
 ```text
 /screenshot-mcp "Increment" ボタンを2回押してスクリーンショットをとって
