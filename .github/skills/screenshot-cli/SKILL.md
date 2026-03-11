@@ -1,6 +1,6 @@
 ---
 name: screenshot-cli
-description: 'Take a screenshot of localhost:3000 using playwright-cli (local node_modules terminal commands). Use when: capturing screenshots with Playwright CLI, clicking buttons before screenshot, browser automation without MCP. Starts pnpm dev if server is not running.'
+description: 'Take a screenshot of localhost:3000 using playwright-cli (local node_modules terminal commands). Use when: capturing screenshots with Playwright CLI, clicking buttons before screenshot, browser automation without MCP. Starts pnpm dev if server is not running. 「スクリーンショットをとって」と依頼されたときに使用します'
 argument-hint: 'Actions to perform before screenshot, e.g. "Increment" ボタンを3回押して'
 ---
 
@@ -28,6 +28,7 @@ pnpm run dev
 
 ```bash
 pnpm exec playwright-cli -s=main open --browser=chromium http://localhost:3000
+pnpm exec playwright-cli -s=main resize 640 480
 ```
 
 ### 3. Get Snapshot & Find Button Ref
