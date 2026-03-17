@@ -123,19 +123,26 @@ MCP のオプションでなんとか回避できた。[.vscode/mcp.json](.vscod
 
 (いったん Playwright MCP を「ツールの構成」から停止して実行しました。あまり意味はないかも)
 
-まず `pnpm dev` でサーバを起動しておいてから
+`pnpm exec playwright-cli install --skills` を実行後、
+`.claude/skills/playwright-cli/SKILL.md` の頭だけ編集。
+「`pnpm exec playwright-cli`で実行してね」と書き込んだ。
+
+`pnpm dev` でサーバを起動しておいてから
 
 プロンプト:
 
-1. playwright-cli を使って、http://localhost:3000 を開いて "Increment" ボタンを押して、スクリーンショットをとって。
-   ブラウザはインストール済みの Chromium を使って。
-   playwright-cli は `pnpm exec playwright-cli <command> [args] [options]` のように実行して。
-   playwright-cli の使い方は `pnpm exec playwright-cli --help` で確認して。
-2. (実行されたのを確認後) この手順を.ts として保存できる?
+```text
+/playwright-cli http://localhost:3000 を開いて "Increment" ボタンを押して、<body>要素のスクリーンショットをとって tmp1.pngに保存して。ブラウザのクライアントサイズは640x480で。
+```
 
-これで
+で、ちゃんと実行されたのを確認後
+
+```text
+いまの手順を `scripts/tmp1.ts` に保存して
+```
+
 [scripts/increment-and-screenshot.ts](scripts/increment-and-screenshot.ts)
-が自動生成されました。
+が自動生成された。
 
 実行は
 `pnpm dev` でサーバを起動しておいてから
