@@ -25,6 +25,7 @@
 		"hono": "^4.12.8"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.4.7",
 		"@playwright/cli": "^0.1.1",
 		"@playwright/mcp": "^0.0.68",
 		"@playwright/test": "^1.58.2",
