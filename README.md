@@ -154,7 +154,7 @@ MCP 版よりよっぽど使いやすいし、ちゃんと動く
 とりあえず
 
 ```text
-/screenshot-cli  "Increment" ボタンを2回押して
+/screenshot-cli "Increment" ボタンを2回押して
 ```
 
 で tmp/ 以下にスクリーンショットが生成される。
