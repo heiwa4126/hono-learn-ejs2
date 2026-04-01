@@ -8,8 +8,9 @@
 		"check:server": "node scripts/check-server.mjs",
 		"build": "tsc",
 		"start": "node dist/index.js",
-		"format": "biome format --write .",
-		"format:all": "biome format --write . && dprint fmt",
+		"format": "oxfmt",
+		"lint": "oxlint",
+		"check": "oxfmt && oxlint --fix",
 		"playwright:install:browser:original": "playwright install chromium",
 		"playwright:install:browser": "node scripts/download_chromes.mjs",
 		"playwright:list:browser": "playwright install --list",
@@ -20,12 +21,11 @@
 		"inc2": "tsx scripts/increment2-and-screenshot.ts"
 	},
 	"dependencies": {
-		"@hono/node-server": "^1.19.11",
+		"@hono/node-server": "^1.19.12",
 		"ejs": "^5.0.1",
-		"hono": "^4.12.8"
+		"hono": "^4.12.9"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.7",
 		"@playwright/cli": "^0.1.1",
 		"@playwright/mcp": "^0.0.68",
 		"@playwright/test": "^1.58.2",
