@@ -21,7 +21,7 @@
 		"inc2": "tsx scripts/increment2-and-screenshot.ts"
 	},
 	"dependencies": {
-		"@hono/node-server": "^2.1.5",
+		"@hono/node-server": "^2.1.6",
 		"ejs": "^7.0.2",
 		"hono": "^4.13.13"
 	},
